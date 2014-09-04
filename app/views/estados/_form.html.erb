@@ -1,0 +1,13 @@
+<%= simple_form_for @estado, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :permisos_de_salida %>
+  <%= f.input :disponible %>
+  <%= f.input :malo %>
+  <%= f.input :reparacion %>
+  <%= f.input :reservado %>
+  <%= f.input :descripcion %>
+  <div class="form-actions">
+    <%= f.button :submit, 'Crear Estado', :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
+                estados_path, :class => 'btn' %>
+  </div>
+<% end %>

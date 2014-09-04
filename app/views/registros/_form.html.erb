@@ -1,0 +1,14 @@
+<%= simple_form_for @registro, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :documento %>
+  <%= f.input :nombre_completo %>
+  <%= f.input :numero_ficha %>
+  <%= f.input :contrasena %>
+  <%= f.input :confirmar_contrasena %>
+  <%= f.input :email %>
+  <%= f.input :genero %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registros_path, :class => 'btn' %>
+  </div>
+<% end %>

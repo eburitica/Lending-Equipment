@@ -1,0 +1,48 @@
+<%- model_class = Registro -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:documento) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_completo) %></th>
+      <th><%= model_class.human_attribute_name(:numero_ficha) %></th>
+      <th><%= model_class.human_attribute_name(:contrasena) %></th>
+      <th><%= model_class.human_attribute_name(:confirmar_contrasena) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:genero) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @registros.each do |registro| %>
+      <tr>
+        <td><%= link_to registro.id, registro_path(registro) %></td>
+        <td><%= registro.documento %></td>
+        <td><%= registro.nombre_completo %></td>
+        <td><%= registro.numero_ficha %></td>
+        <td><%= registro.contrasena %></td>
+        <td><%= registro.confirmar_contrasena %></td>
+        <td><%= registro.email %></td>
+        <td><%= registro.genero %></td>
+        <td><%=l registro.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_registro_path(registro), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      registro_path(registro),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_registro_path,
+            :class => 'btn btn-primary' %>
