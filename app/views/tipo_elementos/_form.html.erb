@@ -1,0 +1,10 @@
+<%= simple_form_for @tipo_elemento, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= f.input :descripcion %>
+  <%= f.input :icono %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tipo_elementos_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identificacion: 1
+  nombre: MyString
+  codigo_interno: MyString
+  codigo_contable: MyString
+  descripcion: MyText
+  tipo_elemento_id: 
+
+two:
+  identificacion: 1
+  nombre: MyString
+  codigo_interno: MyString
+  codigo_contable: MyString
+  descripcion: MyText
+  tipo_elemento_id: 
