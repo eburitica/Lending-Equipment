@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906001033) do
+ActiveRecord::Schema.define(version: 20140912003243) do
 
   create_table "ambientes", force: true do |t|
     t.string   "nombre"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20140906001033) do
   end
 
   create_table "elementos", force: true do |t|
-    t.integer  "identificacion"
     t.string   "nombre"
     t.string   "codigo_interno"
     t.string   "codigo_contable"
@@ -31,16 +30,14 @@ ActiveRecord::Schema.define(version: 20140906001033) do
     t.integer  "tipo_elemento_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "estado_id"
   end
 
+  add_index "elementos", ["estado_id"], name: "index_elementos_on_estado_id"
   add_index "elementos", ["tipo_elemento_id"], name: "index_elementos_on_tipo_elemento_id"
 
   create_table "estados", force: true do |t|
-    t.boolean  "permisos_de_salida"
-    t.boolean  "disponible"
-    t.boolean  "malo"
-    t.boolean  "reparacion"
-    t.boolean  "reservado"
+    t.string   "nombre"
     t.text     "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -70,8 +67,6 @@ ActiveRecord::Schema.define(version: 20140906001033) do
     t.string   "documento"
     t.string   "nombre_completo"
     t.string   "numero_ficha"
-    t.string   "contrasena"
-    t.string   "confirmar_contrasena"
     t.string   "email"
     t.boolean  "genero"
     t.datetime "created_at"

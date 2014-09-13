@@ -2,13 +2,12 @@
   <%= f.input :documento %>
   <%= f.input :nombre_completo %>
   <%= f.input :numero_ficha %>
-  <%= f.input :contrasena %>
-  <%= f.input :confirmar_contrasena %>
   <%= f.input :email %>
-  <%= f.input :genero %>
+  Masculino: <%= f.radio_button(:genero, true) %>
+  Femenino: <%= f.radio_button(:genero, false) %>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%= f.button :submit, 'Crear Registro', :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
                 registros_path, :class => 'btn' %>
   </div>
 <% end %>

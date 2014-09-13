@@ -1,11 +1,7 @@
 class CreateEstados < ActiveRecord::Migration
   def change
     create_table :estados do |t|
-      t.boolean :permisos_de_salida
-      t.boolean :disponible
-      t.boolean :malo
-      t.boolean :reparacion
-      t.boolean :reservado
+      t.string :nombre
       t.text :descripcion
 
       t.timestamps

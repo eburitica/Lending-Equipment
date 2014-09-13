@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :estados
+
   resources :ambientes
 
   resources :elementos
 
   resources :tipo_elementos
-
-  resources :estados
 
   resources :registros
 

@@ -6,34 +6,43 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:identificacion) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:codigo_interno) %></th>
       <th><%= model_class.human_attribute_name(:codigo_contable) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:tipo_elemento_id) %></th>
+      <th><%= model_class.human_attribute_name(:estado_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
+
+  <%= form_tag elementos_path, :method => 'get' do %>
+  <% content_tag :label do %>
+  Buscar:
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Nombre o Codigo Interno" %>
+  <% end %>
+  <% end %>
+
   <tbody>
     <% @elementos.each do |elemento| %>
       <tr>
         <td><%= link_to elemento.id, elemento_path(elemento) %></td>
-        <td><%= elemento.identificacion %></td>
         <td><%= elemento.nombre %></td>
         <td><%= elemento.codigo_interno %></td>
         <td><%= elemento.codigo_contable %></td>
         <td><%= elemento.descripcion %></td>
-        <td><%= elemento.tipo_elemento_id %></td>
+        <td><%= elemento.tipo_elemento.nombre %></td>
+        <td><%= elemento.estado.nombre %></td>
         <td><%=l elemento.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => t("helpers.links.Editar")),
                       edit_elemento_path(elemento), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
                       elemento_path(elemento),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => 'Estas Seguro?'},
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -41,6 +50,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.Nuevo")),
             new_elemento_path,
             :class => 'btn btn-primary' %>

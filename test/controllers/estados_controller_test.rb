@@ -18,7 +18,7 @@ class EstadosControllerTest < ActionController::TestCase
 
   test "should create estado" do
     assert_difference('Estado.count') do
-      post :create, estado: { descripcion: @estado.descripcion, disponible: @estado.disponible, malo: @estado.malo, permisos_de_salida: @estado.permisos_de_salida, reparacion: @estado.reparacion, reservado: @estado.reservado }
+      post :create, estado: { descripcion: @estado.descripcion, nombre: @estado.nombre }
     end
 
     assert_redirected_to estado_path(assigns(:estado))
@@ -35,7 +35,7 @@ class EstadosControllerTest < ActionController::TestCase
   end
 
   test "should update estado" do
-    patch :update, id: @estado, estado: { descripcion: @estado.descripcion, disponible: @estado.disponible, malo: @estado.malo, permisos_de_salida: @estado.permisos_de_salida, reparacion: @estado.reparacion, reservado: @estado.reservado }
+    patch :update, id: @estado, estado: { descripcion: @estado.descripcion, nombre: @estado.nombre }
     assert_redirected_to estado_path(assigns(:estado))
   end
 

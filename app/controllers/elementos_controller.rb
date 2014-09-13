@@ -4,7 +4,7 @@ class ElementosController < ApplicationController
   # GET /elementos
   # GET /elementos.json
   def index
-    @elementos = Elemento.all
+    @elementos = Elemento.search(params[:search], params[:page])
   end
 
   # GET /elementos/1
@@ -28,7 +28,7 @@ class ElementosController < ApplicationController
 
     respond_to do |format|
       if @elemento.save
-        format.html { redirect_to @elemento, notice: 'Elemento was successfully created.' }
+        format.html { redirect_to @elemento, notice: 'Elemento fue creado con exito.' }
         format.json { render :show, status: :created, location: @elemento }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ElementosController < ApplicationController
   def update
     respond_to do |format|
       if @elemento.update(elemento_params)
-        format.html { redirect_to @elemento, notice: 'Elemento was successfully updated.' }
+        format.html { redirect_to @elemento, notice: 'Elemento fue actualizado con exito.' }
         format.json { render :show, status: :ok, location: @elemento }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ElementosController < ApplicationController
   def destroy
     @elemento.destroy
     respond_to do |format|
-      format.html { redirect_to elementos_url, notice: 'Elemento was successfully destroyed.' }
+      format.html { redirect_to elementos_url, notice: 'Elemento fue eliminado con exito.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ElementosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def elemento_params
-      params.require(:elemento).permit(:identificacion, :nombre, :codigo_interno, :codigo_contable, :descripcion, :tipo_elemento_id)
+      params.require(:elemento).permit( :nombre, :codigo_interno, :codigo_contable, :descripcion, :tipo_elemento_id, :estado_id)
     end
 end

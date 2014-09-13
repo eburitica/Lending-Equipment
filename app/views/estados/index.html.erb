@@ -6,11 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:permisos_de_salida) %></th>
-      <th><%= model_class.human_attribute_name(:disponible) %></th>
-      <th><%= model_class.human_attribute_name(:malo) %></th>
-      <th><%= model_class.human_attribute_name(:reparacion) %></th>
-      <th><%= model_class.human_attribute_name(:reservado) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,20 +16,16 @@
     <% @estados.each do |estado| %>
       <tr>
         <td><%= link_to estado.id, estado_path(estado) %></td>
-        <td><%= estado.permisos_de_salida %></td>
-        <td><%= estado.disponible %></td>
-        <td><%= estado.malo %></td>
-        <td><%= estado.reparacion %></td>
-        <td><%= estado.reservado %></td>
+        <td><%= estado.nombre %></td>
         <td><%= estado.descripcion %></td>
         <td><%=l estado.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => t("helpers.links.Editar")),
                       edit_estado_path(estado), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
                       estado_path(estado),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm =>  'Estas Seguro?' },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -41,6 +33,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.Nuevo")),
             new_estado_path,
             :class => 'btn btn-primary' %>

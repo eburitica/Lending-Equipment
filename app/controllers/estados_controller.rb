@@ -69,6 +69,6 @@ class EstadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estado_params
-      params.require(:estado).permit(:permisos_de_salida, :disponible, :malo, :reparacion, :reservado, :descripcion)
+      params.require(:estado).permit(:nombre, :descripcion)
     end
 end

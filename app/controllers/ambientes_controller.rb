@@ -4,7 +4,7 @@ class AmbientesController < ApplicationController
   # GET /ambientes
   # GET /ambientes.json
   def index
-    @ambientes = Ambiente.all
+    @ambientes = Ambiente.search(params[:search], params[:page])
   end
 
   # GET /ambientes/1
@@ -28,7 +28,7 @@ class AmbientesController < ApplicationController
 
     respond_to do |format|
       if @ambiente.save
-        format.html { redirect_to @ambiente, notice: 'Ambiente was successfully created.' }
+        format.html { redirect_to @ambiente, notice: 'Ambiente fue creado con exito.' }
         format.json { render :show, status: :created, location: @ambiente }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AmbientesController < ApplicationController
   def update
     respond_to do |format|
       if @ambiente.update(ambiente_params)
-        format.html { redirect_to @ambiente, notice: 'Ambiente was successfully updated.' }
+        format.html { redirect_to @ambiente, notice: 'Ambiente fue actualizado con exito.' }
         format.json { render :show, status: :ok, location: @ambiente }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AmbientesController < ApplicationController
   def destroy
     @ambiente.destroy
     respond_to do |format|
-      format.html { redirect_to ambientes_url, notice: 'Ambiente was successfully destroyed.' }
+      format.html { redirect_to ambientes_url, notice: 'Ambiente fue eliminado con exito.' }
       format.json { head :no_content }
     end
   end

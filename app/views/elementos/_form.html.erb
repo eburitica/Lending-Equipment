@@ -1,13 +1,14 @@
 <%= simple_form_for @elemento, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :identificacion %>
   <%= f.input :nombre %>
   <%= f.input :codigo_interno %>
   <%= f.input :codigo_contable %>
   <%= f.input :descripcion %>
-  <%= f.input :tipo_elemento_id %>
+ <%= f.collection_select :tipo_elemento_id, TipoElemento.all, :id, :nombre, prompt: "Seleccione Tipo de Elemento", required: true %>
+  <%= f.collection_select :estado_id, Estado.all, :id, :nombre, prompt: "Seleccione Estado" %>
+
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%= f.button :submit, "Crear Elemento", :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
                 elementos_path, :class => 'btn' %>
   </div>
 <% end %>

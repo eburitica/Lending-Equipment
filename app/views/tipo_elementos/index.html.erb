@@ -13,6 +13,15 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
+
+  <%= form_tag tipo_elementos_path, :method => 'get' do %>
+  <% content_tag :label do %>
+  Buscar:
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Nombre", :nombre => nil %>
+  <% end %>
+  <% end %>
+  
   <tbody>
     <% @tipo_elementos.each do |tipo_elemento| %>
       <tr>
@@ -22,12 +31,12 @@
         <td><%= tipo_elemento.icono %></td>
         <td><%=l tipo_elemento.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => t("helpers.links.Editar")),
                       edit_tipo_elemento_path(tipo_elemento), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
                       tipo_elemento_path(tipo_elemento),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => 'Estas Seguro?' },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
@@ -35,6 +44,10 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.Agregar")),
             new_tipo_elemento_path,
             :class => 'btn btn-primary' %>
+
+<%= will_paginate @tipo_elementos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+Tipo de elementos: <%= @tipo_elementos.count %>

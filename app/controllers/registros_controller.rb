@@ -4,7 +4,7 @@ class RegistrosController < ApplicationController
   # GET /registros
   # GET /registros.json
   def index
-    @registros = Registro.all
+    @registros = Registro.search(params[:search], params[:page])
   end
 
   # GET /registros/1
@@ -28,7 +28,7 @@ class RegistrosController < ApplicationController
 
     respond_to do |format|
       if @registro.save
-        format.html { redirect_to @registro, notice: 'Registro was successfully created.' }
+        format.html { redirect_to @registro, notice: 'Registro fue creado con exito.' }
         format.json { render :show, status: :created, location: @registro }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RegistrosController < ApplicationController
   def update
     respond_to do |format|
       if @registro.update(registro_params)
-        format.html { redirect_to @registro, notice: 'Registro was successfully updated.' }
+        format.html { redirect_to @registro, notice: 'Registro fue actualizado con exito.' }
         format.json { render :show, status: :ok, location: @registro }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RegistrosController < ApplicationController
   def destroy
     @registro.destroy
     respond_to do |format|
-      format.html { redirect_to registros_url, notice: 'Registro was successfully destroyed.' }
+      format.html { redirect_to registros_url, notice: 'Registro fue eliminado con exito.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class RegistrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_params
-      params.require(:registro).permit(:documento, :nombre_completo, :numero_ficha, :contrasena, :confirmar_contrasena, :email, :genero)
+      params.require(:registro).permit(:documento, :nombre_completo, :numero_ficha, :email, :genero)
     end
 end
