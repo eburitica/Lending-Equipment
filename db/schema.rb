@@ -43,26 +43,6 @@ ActiveRecord::Schema.define(version: 20140912003243) do
     t.datetime "updated_at"
   end
 
-  create_table "inventarios", force: true do |t|
-    t.string   "portatiles"
-    t.string   "mouse"
-    t.string   "cargadores_portatil"
-    t.string   "bafles"
-    t.string   "cables_hdmi"
-    t.string   "video_beam"
-    t.string   "extenciones"
-    t.string   "diademas"
-    t.string   "equipo_sonido"
-    t.string   "cables_vga"
-    t.string   "pantalla"
-    t.string   "controles_pantalla"
-    t.string   "microfono"
-    t.string   "controles_aire"
-    t.string   "espacios"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "registros", force: true do |t|
     t.string   "documento"
     t.string   "nombre_completo"
