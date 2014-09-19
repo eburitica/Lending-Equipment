@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140912003243) do
     t.string   "documento"
     t.string   "nombre_completo"
     t.string   "numero_ficha"
+    t.string   "confirmar_contrasena"
     t.string   "email"
     t.boolean  "genero"
     t.datetime "created_at"
