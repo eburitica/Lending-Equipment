@@ -10,12 +10,11 @@ class Elemento < ActiveRecord::Base
 
   def self.search(search, page)
 		where(['upper(codigo_interno) like ? or nombre = ?', 
-		"%#{search}%".upcase,"#{search}"]).paginate(page: page, per_page: 8).order("id")
+		"%#{search}%".upcase,"#{search}"]).paginate(page: page, per_page: 15).order("id")
 	end
 
   def self.cuente(tipoelemt_id)
       Elemento.where(:tipo_elemento_id => tipoelemt_id).count
   end  
-
 
 end
