@@ -1,0 +1,22 @@
+<div class="col-lg-3 col-md-4">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-volume-up fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div class="huge"><%= Elemento.cuente(tipo_elemento.id)%></div>
+                    <div><%= tipo_elemento.nombre %></div>
+                </div>
+            </div>
+        </div>
+        <a href=<%= elementos_path(tipo_elemento_id: tipo_elemento.id)%>>
+            <div class="panel-footer">
+                <span class="pull-left">Ir a <%= tipo_elemento.nombre %></span>
+                <span class="pull-right"><i class="fa fa-volume-up"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>
+</div>

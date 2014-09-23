@@ -4,7 +4,8 @@ class ElementosController < ApplicationController
   # GET /elementos
   # GET /elementos.json
   def index
-    @elementos = Elemento.search(params[:search], params[:page])
+    tipo_elemento_id = params[:tipo_elemento_id]
+    @elementos = Elemento.where(:tipo_elemento_id => tipo_elemento_id).search(params[:search], params[:page])
   end
 
   # GET /elementos/1

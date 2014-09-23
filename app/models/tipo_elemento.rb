@@ -5,7 +5,7 @@ class TipoElemento < ActiveRecord::Base
 
 	def self.search(search, page)
 		where(['upper(nombre) like ?',
-		"%#{search}%".upcase]).paginate(page: page, per_page: 8).order("id")
+		"%#{search}%".upcase]).paginate(page: page).order("id")
 	end
 
 end

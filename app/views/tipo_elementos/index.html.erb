@@ -1,53 +1,18 @@
-<%- model_class = TipoElemento -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:icono) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Lending <small>Equipment</small>
+            </h1>
+            <ol class="breadcrumb">
+                <center><li class="active">
+                    <i class="glyphicon glyphicon-refresh fa-5x"></i><h2> Bievenidos</h2>
+                </li></center>
+            </ol>
+        </div>
+    </div>
 
-  <%= form_tag tipo_elementos_path, :method => 'get' do %>
-  <% content_tag :label do %>
-  Buscar:
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Nombre", :nombre => nil %>
-  <% end %>
-  <% end %>
-  
-  <tbody>
-    <% @tipo_elementos.each do |tipo_elemento| %>
-      <tr>
-        <td><%= link_to tipo_elemento.id, tipo_elemento_path(tipo_elemento) %></td>
-        <td><%= tipo_elemento.nombre %></td>
-        <td><%= tipo_elemento.descripcion %></td>
-        <td><%= tipo_elemento.icono %></td>
-        <td><%=l tipo_elemento.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.Editar")),
-                      edit_tipo_elemento_path(tipo_elemento), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
-                      tipo_elemento_path(tipo_elemento),
-                      :method => :delete,
-                      :data => { :confirm => 'Estas Seguro?' },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.Agregar")),
-            new_tipo_elemento_path,
-            :class => 'btn btn-primary' %>
-
-<%= will_paginate @tipo_elementos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-<br>
-Tipo de elementos: <%= @tipo_elementos.count %>
+    <div class="row">
+            <%= render  @tipo_elementos %>
+    </div>
+</div>    
