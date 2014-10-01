@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-3">
-                    <i class="fa fa-volume-up fa-5x"></i>
+                    <i class="fa <%= tipo_elemento.icono %>  fa-5x"></i>
                 </div>
                 <div class="col-xs-9 text-right">
                     <div class="huge"><%= Elemento.cuente(tipo_elemento.id)%></div>
@@ -11,12 +11,24 @@
                 </div>
             </div>
         </div>
-        <a href=<%= elementos_path(tipo_elemento_id: tipo_elemento.id)%>>
-            <div class="panel-footer">
+        
+        <div class="panel-footer">
+            <a href=<%= tipo_elemento_path(tipo_elemento) %>>
+                <div class="pull-right"><i class="fa fa-trash-o"></i>
+                </div>
+            </a>
+           
+            <a href=<%= edit_tipo_elemento_path(tipo_elemento)%>>
+                <div class="pull-right"><i class="fa fa-edit"></i> 
+                </div>
+            </a>
+            
+            <a href=<%= elementos_path(tipo_elemento_id: tipo_elemento.id)%>>
                 <span class="pull-left">Ir a <%= tipo_elemento.nombre %></span>
-                <span class="pull-right"><i class="fa fa-volume-up"></i></span>
                 <div class="clearfix"></div>
-            </div>
-        </a>
+            </a>
+        </div>
+        
     </div>
 </div>
+

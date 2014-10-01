@@ -12,6 +12,13 @@
         </div>
     </div>
 
+     <ul><div class="btn-group">
+        <%= link_to t('.new', :default => t("helpers.links.Agregar Tipo de Elemento")),
+            new_tipo_elemento_path,
+            :class => 'btn btn-success' %>
+    </div></ul>
+
+
     <div class="row">
             <%= render  @tipo_elementos %>
     </div>

@@ -17,6 +17,6 @@ class Registro < ActiveRecord::Base
 
 	def self.search(search, page)
 		where(['upper(documento) like ?  or numero_ficha = ?',
-		"%#{search}%".upcase,"#{search}"]).paginate(page: page, per_page: 8).order("id")
+		"%#{search}%".upcase,"#{search}"]).paginate(page: page).order("id")
 	end
 end
