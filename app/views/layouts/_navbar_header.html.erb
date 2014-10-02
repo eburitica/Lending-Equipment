@@ -11,6 +11,26 @@
         </div>
 
 
+<h5 align="right"> 
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Inicio de sesion <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+
+
+                    <% if current_user %>
+                          <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+                          <%= link_to "Logout", :logout, method: :get %>
+                        <% else %>
+                          <%= link_to "Register", new_user_path %> |
+                          <%= link_to "Login", :login %>
+                </ul>
+          </li></h5>
+    <% end %>
+                      
+
+
+
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav" role="tablist">
             <li class="dropdown">
@@ -89,24 +109,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Esteban Buritica <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Mensajes</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i> Configuracion</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Salir</a>
-                    </li>
-                </ul>
-            </li>
+            
         </ul>
 
     </nav>
