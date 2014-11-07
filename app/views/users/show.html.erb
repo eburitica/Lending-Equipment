@@ -1,11 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
+
+		<p>
+			<strong>Nombre:</strong>
+			<%= @user.nombre %>
+		</p>
+		<p>
+			<strong>Apellidos:</strong>
+			<%= @user.apellido %>
+		</p>
+		<p>
+			<strong>Telefono:</strong>
+			<%= @user.telefono %>
+		</p>
+		<p>
+			<strong>Celular:</strong>
+			<%= @user.celular %>
+		</p>
+		<p>
+			<strong>Direccion:</strong>
+			<%= @user.direccion %>
+		</p>
+		<p>
+			<strong>Email:</strong>
+			<%= @user.email %>
+		</p>
+
+<!-- <p>
   <strong>Crypted password:</strong>
   <%= @user.crypted_password %>
 </p>
@@ -13,7 +35,9 @@
 <p>
   <strong>Salt:</strong>
   <%= @user.salt %>
-</p>
+</p> -->
+
+
 
 <%= link_to 'Editar', edit_user_path(@user) %> |
 <%= link_to 'Atras', users_path %>
