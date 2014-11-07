@@ -2,26 +2,3 @@
 
 <%= render 'form' %>
 
-<div class="jumbotron">
-
-	<div class="btn-group">
-	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-			Iniciar Sesion <span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu">
-			<% if current_user %>
-			<%= link_to "Editar Perfil", edit_user_path(current_user.id) %>
-			<%= link_to "Logout", :logout, method: :get %>
-			<% else %>
-			<%= link_to "Registrar", new_user_path %> |
-			<%= link_to "Entrar", :login %>
-			<% end %>
-		</ul>
-	</div>
-
-
-</div>
-
-
-
-<%= link_to 'Inicio', root_path %>

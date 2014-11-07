@@ -8,7 +8,7 @@
   <dd><%= @elemento.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:codigo_interno) %>:</strong></dt>
   <dd><%= @elemento.codigo_interno %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:codigo_contable) %>:</strong></dt>
+  <dt>Placa Inventario</strong></dt>
   <dd><%= @elemento.codigo_contable %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @elemento.descripcion %></dd>
@@ -19,8 +19,7 @@
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.Atras")),
-              elementos_path, :class => 'btn'  %>
+  <%= link_to 'Atras', elementos_path(tipo_elemento_id: @elemento.tipo_elemento_id), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.Editar")),
               edit_elemento_path(@elemento), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),

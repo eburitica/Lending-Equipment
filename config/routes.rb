@@ -26,11 +26,11 @@ Rails.application.routes.draw do
    root 'registros#index'
 
 
-resources :user_sessions
-resources :users
+    resources :user_sessions
+    resources :users
 
-get 'login' => 'user_sessions#new', :as => :login
-get 'logout' => 'user_sessions#destroy', :as => :logout
+    get 'login' => 'user_sessions#new', :as => :login
+    get 'logout' => 'user_sessions#destroy', :as => :logout
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

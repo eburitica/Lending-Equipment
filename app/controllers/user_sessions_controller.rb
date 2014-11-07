@@ -1,4 +1,3 @@
-
 class UserSessionsController < ApplicationController
    layout  'loguin'
 	 skip_before_filter :require_login, except: [:destroy]
@@ -16,7 +15,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-  		logout
+  logout 
 	redirect_to(root_url, notice: 'Desconectado!')
   
   end

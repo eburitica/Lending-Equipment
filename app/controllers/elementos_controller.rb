@@ -16,10 +16,12 @@ class ElementosController < ApplicationController
   # GET /elementos/new
   def new
     @elemento = Elemento.new
+    @tipo_elemento_id = params[:tipo_elemento_id]
   end
 
   # GET /elementos/1/edit
   def edit
+    @tipo_elemento_id = params[:tipo_elemento_id]
   end
 
   # POST /elementos
