@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107212311) do
+ActiveRecord::Schema.define(version: 20141107234838) do
 
   create_table "ambientes", force: true do |t|
     t.string   "nombre"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20141107212311) do
     t.string   "apellido"
     t.integer  "telefono"
     t.integer  "celular"
-    t.integer  "direccion"
+    t.string   "dir"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
