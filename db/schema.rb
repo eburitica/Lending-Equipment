@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107234838) do
+ActiveRecord::Schema.define(version: 20141111000828) do
 
   create_table "ambientes", force: true do |t|
     t.string   "nombre"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20141107234838) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nombre"
-    t.string   "apellido"
     t.integer  "telefono"
     t.integer  "celular"
     t.string   "dir"

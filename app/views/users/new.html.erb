@@ -1,5 +1,10 @@
-<h1>Nuevo Usuario</h1>
+<div class="panel panel-primary" align="justified">
+	<div class="panel-heading"><h1>Nuevo Usuario</h1></div> 
+	<div class="panel-body">
 
-<%= render 'form' %>
+		<%= render 'form' %>
 
-<%= link_to 'Atras', root_path %>
+	</div>
+</div>
+
+<%= link_to 'Atras', users_path, :class => 'btn btn-default'  %>

@@ -1,7 +1,13 @@
-<h1>Editar Usuario</h1>
-<div class="page-header">
-	<%= render 'form' %>
+<div class="panel panel-primary ">
+	<div class="panel-heading"><h1>Editar Usuario</h1></div> 
+	<div class="panel-body">
+
+		<div class="page-header">
+			<%= render 'form' %>
+		</div>
+	</div>
 </div>
 
-<%= link_to 'Mostrar', @user %> |
-<%= link_to 'Atras', users_path %>
+
+<%= link_to 'Mostrar', @user, :class => 'btn btn-default'  %> |
+<%= link_to 'Atras', users_path, :class => 'btn btn-default'  %>

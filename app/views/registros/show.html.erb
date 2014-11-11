@@ -18,9 +18,9 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.Atras")),
-              registros_path, :class => 'btn'  %>
+              registros_path, :class => 'btn btn-default'  %>
   <%= link_to t('.edit', :default => t("helpers.links.Editar")),
-              edit_registro_path(@registro), :class => 'btn' %>
+              edit_registro_path(@registro), :class => 'btn btn-default' %>
   <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
               registro_path(@registro),
               :method => 'delete',

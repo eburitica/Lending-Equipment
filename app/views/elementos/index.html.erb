@@ -11,7 +11,7 @@
     <% content_tag :label do %>
     Buscar:
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Nombre o Codigo Interno" %>
+    <%= submit_tag "Codigo Interno", :class => "btn btn-default"%>
     <% end %>
     <% end %>
 
@@ -46,7 +46,7 @@
         <td><%= elemento.estado.nombre %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.Editar")),
-          edit_elemento_path(elemento,tipo_elemento_id: @tipo_elemento_id), :class => 'btn btn-mini' %>
+          edit_elemento_path(elemento,tipo_elemento_id: @tipo_elemento_id), :class => 'btn btn-default' %>
           <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
           elemento_path(elemento),
           :method => :delete,
@@ -65,6 +65,6 @@
 
 <%= link_to t('.new', :default => t("helpers.links.Nuevo")),
             new_elemento_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-default' %>
 <br>
 Elementos: <%= @elementos.count %>

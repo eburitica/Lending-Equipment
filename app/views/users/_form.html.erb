@@ -2,32 +2,27 @@
   <%= f.error_notification %>
 
   <div class="field col-md-3">
-    <%= f.label :Nombre %><br />
+    <%= f.label :Nombre_Completo %><br>
     <%= f.text_field :nombre %>
   </div>
 
-  <div class="field col-md-3 ">
-    <%= f.label :Apellidos %><br />
-    <%= f.text_field :apellido %>
-  </div>
-
   <div class="field col-md-3">
-    <%= f.label :Telefono %><br />
+    <%= f.label :Telefono %><br>
     <%= f.text_field :telefono %>
   </div>
 
   <div class="field col-md-3">
-    <%= f.label :Celular %><br />
+    <%= f.label :Celular %><br>
     <%= f.text_field :celular %>
   </div>
 
   <div class="field col-md-3">
-    <%= f.label :Direccion %><br />
+    <%= f.label :Direccion %><br>
     <%= f.text_field :dir %>
   </div>
 
   <div class="field col-md-3">
-   	<%= f.label :Email %><br />
+   	<%= f.label :Email %><br>
    	<%= f.text_field :email %>
   </div>
 
@@ -41,8 +36,8 @@
  	<%= f.password_field :password_confirmation %>
   </div>
 
-  <div class=".actions ">
-  <%= f.submit"Guardar" %>
+  <div class=".actions col-md-6">
+  <%= f.submit"Guardar", :class => "btn btn-primary"%>
   </div>
 
 <% end %>

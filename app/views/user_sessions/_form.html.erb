@@ -1,6 +1,6 @@
 <%= form_tag user_sessions_path, :method => :post do %>
 
-<div class="jumbotron">
+<div class="jumbotron col-md-6">
 	<div class="col-lg-6">
 		<div class="input-group ">
 			<span class="input-group-addon">@ !</span>
@@ -16,8 +16,9 @@
 
 </div>
 
-	<div class="actions">
-		<%= submit_tag "Iniciar Sesion" %>
+
+	<div class="col-md-12">
+		<%= submit_tag "Iniciar Sesion", :class => "actions btn btn-primary" %>
 	</div>
 
 <% end %>
