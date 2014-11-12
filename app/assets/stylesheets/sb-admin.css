@@ -223,3 +223,33 @@ ul.alert-dropdown {
 
 .panel-yellow a:hover {
     color: #df8a13;
+}
+
+
+/*User Session*/
+
+.boxlogin{
+
+    margin: 75px ;
+    width: 500px;
+    margin-right: 70px;
+    box-shadow: 5px 18px 30px #a8a7a8;
+    
+}
+
+.input-group{
+    margin: 5px ;
+
+}
+
+.actions{
+    margin: 10px;
+    width:390px;
+
+
+
+
+
+}
+
+
