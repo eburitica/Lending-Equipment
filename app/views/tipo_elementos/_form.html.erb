@@ -3,12 +3,12 @@
   <%= f.input :descripcion %>
   <select id="tipo_elemento_icono" name="tipo_elemento[icono]">
     <option value="fa-shopping-cart">
-      <i class="fa fa-shopping-cart fa-5x"></i>
-      fa-shopping-cart
+      <a href="#"><i class="fa fa-shopping-cart fa-5x"></i>
+      fa-shopping-cart</a>
     </option>
     <option value="fa-glass">
-      <i class="fa fa-glass fa-5x"></i>
-      fa-glass
+      <a href="#"><i class="fa fa-glass fa-5x"></i>
+      fa-glass</a>
     </option>
     <option value="fa-music">
       <i class="fa fa-music fa-5x"></i>
@@ -2004,6 +2004,10 @@
     </option>
 
 </select>
+
+<div id="icon">  </div>
+
+
   <div class="form-actions">
     <%= f.button :submit ,'Agregar',  :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
