@@ -1,48 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="panel panel-primary col-md-5" align="justified">
-<div class="panel-heading"><h4>Usuario Registrado</h4></div> 
- <div class="panel-body">		
-		<p>
-			<strong>Nombre Completo:</strong>
-			<%= @user.nombre %>
-		</p>
-		<hr>
-		<p>
-			<strong>Telefono:</strong>
-			<%= @user.telefono %>
-		</p>
-		<hr>
-		<p>
-			<strong>Celular:</strong>
-			<%= @user.celular %>
-		</p>
-		<hr>
-		<p>
-			<strong>Direccion:</strong>
-			<%= @user.dir %>
-		</p>
-		<hr>
-		<p>
-			<strong>Email:</strong>
-			<%= @user.email %>
-		</p>
-		</div>
-</div>
-<!-- <p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
+<div class="panel panel-primary ">
+	<div class="panel-heading"><h4>Usuario Registrado</h4></div> 
+	 	<div class="panel-body">		
+			<p>
+				<strong>Nombre Completo:</strong>
+				<%= @user.nombre %>
+			</p>
+			<hr>
+			<p>
+				<strong>Telefono:</strong>
+				<%= @user.telefono %>
+			</p>
+			<hr>
+			<p>
+				<strong>Celular:</strong>
+				<%= @user.celular %>
+			</p>
+			<hr>
+			<p>
+				<strong>Direccion:</strong>
+				<%= @user.dir %>
+			</p>
+			<hr>
+			<p>
+				<strong>Email:</strong>
+				<%= @user.email %>
+			</p>
+		
 
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p> -->
+		<!-- <p>
+		  <strong>Crypted password:</strong>
+		  <%= @user.crypted_password %>
+		</p>
+
+		<p>
+		  <strong>Salt:</strong>
+		  <%= @user.salt %>
+		</p> -->
 
 
-<br>	<div class="col-md-12">
-<%= link_to '', :back, :class => ' fa-reply fa-2x'  %> |
-<%= link_to '', edit_user_path(@user), :class => 'fa fa-edit fa-2x' %> 
+	<br>	<div class="col-md-12">
+	<%= link_to '', :back, :class => ' fa-reply fa-2x'  %> |
+	<%= link_to '', edit_user_path(@user), :class => 'fa fa-edit fa-2x' %> 
+	</div>
+	</div>
 
 </div>
