@@ -10,7 +10,7 @@
 tipo_elementos = [{nombre:"Portatiles",descripcion:"",icono:"fa-laptop"},
 {nombre:"Cargadores de portatil",descripcion:"",icono:"fa-shopping-cart"},
 {nombre:"Mouses",descripcion:"",icono:"fa-shopping-cart"},
-{nombre:"Cables HDMI",descripcion:"",icono:"fa-shopping-cart"},
+{nombre:"Cables HDMI",descripcion:"",icono:"images/hdmi.jpg"},
 {nombre:"Cables VGA",descripcion:"",icono:"fa-shopping-cart"},
 {nombre:"Diademas",descripcion:"",icono:"fa-shopping-cart"},
 {nombre:"Pantalla-TV",descripcion:"",icono:"fa-shopping-cart"},
@@ -33,7 +33,7 @@ end
 
 
 
-users = [{nombre:"Esteban Buritica Castaño", telefono:"3322548", celular:"3128144738", dir:"Cll 41 B Sur # 29A15", email:"baneste.17@gmail.com", crypted_password:"123456", salt:"123456"}]
+users = [{nombre:"Esteban Buritica Castaño", email:"baneste.17@gmail.com", crypted_password:"123456", salt:"123456"}]
 
 users.each do |user|
 	User.where(nombre: user[:nombre], email: user[:email] ,crypted_password: user[:crypted_password], salt: user[:salt]).first || User.create(user)

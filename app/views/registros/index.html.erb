@@ -20,7 +20,7 @@
 
     <thead class="btn-success">
       <tr> 
-        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th>Mostrar Registro</th>
         <th><%= model_class.human_attribute_name(:documento) %></th>
         <th><%= model_class.human_attribute_name(:nombre_completo) %></th>
         <th><%= model_class.human_attribute_name(:numero_ficha) %></th>
@@ -34,7 +34,7 @@
     <tbody>
       <% @registros.each do |registro| %>
         <tr>
-          <td><%= link_to registro.id, registro_path(registro) %></td>
+          <td><%= link_to "Mostrar Registro", registro_path(registro) %></td>
           <td><%= registro.documento %></td>
           <td><%= registro.nombre_completo %></td>
           <td><%= registro.numero_ficha %></td>

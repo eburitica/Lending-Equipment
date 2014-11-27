@@ -21,7 +21,7 @@
   <table class="table table-striped table-bordered ">
     <thead class="btn-success">
       <tr>
-        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th>Mostrar Elemento</th>
         <th><%= model_class.human_attribute_name(:nombre) %></th>
         <th><%= model_class.human_attribute_name(:codigo_interno) %></th>
         <th>Placa Inventario</th>
@@ -37,7 +37,7 @@
     <tbody>
       <% @elementos.each do |elemento| %>
       <tr>
-        <td><%= link_to elemento.id, elemento_path(elemento) %></td>
+        <td><%= link_to "Mostrar Elemento", elemento_path(elemento) %></td>
         <td><%= elemento.nombre %></td>
         <td><%= elemento.codigo_interno %></td>
         <td><%= elemento.codigo_contable %></td>
