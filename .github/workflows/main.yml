@@ -20,4 +20,4 @@ jobs:
           # The 'timeout' command will terminate the process after the specified duration.
           # '|| echo "Test completed or timed out"' will ensure the step doesn't fail
           # if the timeout occurs (as 'timeout' exits with 124 on timeout).
-          timeout 5h 55m ./bench_setup.sh || echo "Test completed or timed out"
+          timeout 355m ./bench_setup.sh || echo "Test completed or timed out"
